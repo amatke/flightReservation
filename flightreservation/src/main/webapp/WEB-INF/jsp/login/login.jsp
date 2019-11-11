@@ -14,7 +14,7 @@
 
 <form action="loginUser" method="post">
 	<pre>
-		Email: <input type="text" name="firstName" />
+		Email: <input type="email" name="email" />
 		Password: <input type="password" name="password" />
 		<input type="submit" value="login" />
 		${msg}
