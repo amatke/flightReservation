@@ -10,13 +10,15 @@
 
 <h2>User Login</h2>
 
-<form action="loginUser" method="post">
-<pre>
-Email: <input type="text" name="firstName" />
-Password: <input type="password" name="password" />
-<input type="submit" value="login" />
-</pre>
 
+
+<form action="loginUser" method="post">
+	<pre>
+		Email: <input type="text" name="firstName" />
+		Password: <input type="password" name="password" />
+		<input type="submit" value="login" />
+		${msg}
+	</pre>
 </form>
 
 </body>
