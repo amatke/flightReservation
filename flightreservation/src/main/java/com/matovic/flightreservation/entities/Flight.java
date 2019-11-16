@@ -10,7 +10,7 @@ public class Flight extends AbstractEntity{
 
 
 	private String flightNumber;
-	private String operatinAirlines;
+	private String operatingAirlines;
 	private String departureCity;
 	private String arrivalCity;
 	private Date dateOfDeparture;
@@ -23,7 +23,7 @@ public class Flight extends AbstractEntity{
 			Date dateOfDeparture, Timestamp estimatedDepartureTime) {
 		super();
 		this.flightNumber = flightNumber;
-		this.operatinAirlines = operatinAirlines;
+		this.operatingAirlines = operatinAirlines;
 		this.departureCity = departureCity;
 		this.arrivalCity = arrivalCity;
 		this.dateOfDeparture = dateOfDeparture;
@@ -39,12 +39,12 @@ public class Flight extends AbstractEntity{
 		this.flightNumber = flightNumber;
 	}
 
-	public String getOperatinAirlines() {
-		return operatinAirlines;
+	public String getOperatingAirlines() {
+		return operatingAirlines;
 	}
 
-	public void setOperatinAirlines(String operatinAirlines) {
-		this.operatinAirlines = operatinAirlines;
+	public void setOperatingAirlines(String operatinAirlines) {
+		this.operatingAirlines = operatinAirlines;
 	}
 
 	public String getDepartureCity() {
@@ -87,7 +87,7 @@ public class Flight extends AbstractEntity{
 		builder.append(", flightNumber=");
 		builder.append(flightNumber);
 		builder.append(", operatinAirlines=");
-		builder.append(operatinAirlines);
+		builder.append(operatingAirlines);
 		builder.append(", departureCity=");
 		builder.append(departureCity);
 		builder.append(", arrivalCity=");
