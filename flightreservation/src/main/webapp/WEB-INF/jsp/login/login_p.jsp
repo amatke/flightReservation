@@ -4,22 +4,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register User</title>
+<title>Login</title>
 </head>
 <body>
 
-<h2>Register</h2>
+<h2>User Login</h2>
 
 
 
-<form action="registration" method="post">
+<form action="login" method="post">
 	<pre>
-		First Name: <input type="text" name="firstName" />
-		Last Name: <input type="text" name="lastName" />
 		Email: <input type="email" name="email" />
 		Password: <input type="password" name="password" />
-		Confirm Password: <input type="password" name="confirmPassword" />
-		<input type="submit" value="register" />
+		<input type="submit" value="Login" />
+				
 		${msg}
 	</pre>
 </form>

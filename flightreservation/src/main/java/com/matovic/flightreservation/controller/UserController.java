@@ -19,32 +19,41 @@ public class UserController {
 	
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
-		return "login/registerUser";
+		return "login/register_p";
+	}
+	
+	@RequestMapping("/showLogin")
+	public String showLoginPage() {
+		return "login/login_p";
 	}
 	
 	
 	@PostMapping("/registration")
-	public String registerUser(@ModelAttribute("user") User user, @RequestParam("confirmPassword") String confirmPassword, ModelMap modelMap) {
+	public String registerUser(@ModelAttribute("user") User user, 
+			@RequestParam("confirmPassword") String confirmPassword, 
+			ModelMap modelMap) {
 		
 		if(!user.getPassword().equals(confirmPassword)) {
 			modelMap.addAttribute("msg", "Please retype password correctly.");
-			return "login/registerUser";
+			return "login/register_p";
 		}
 		userRepository.save(user);
-		return "login/login";
+		return "login/login_p";
 	}
 	
 	
-	@PostMapping("/loginUser")
-	public String showLoginPage(@RequestParam("email") String email, @RequestParam("password") String password, ModelMap modelMap) {
+	@PostMapping("/login")
+	public String showLoginPage(@RequestParam("email") String email, 
+			@RequestParam("password") String password, 
+			ModelMap modelMap) {
 		
 		
 		User user = userRepository.findByEmail(email);
 		
 		if(!user.getPassword().equals(password)) {
 			modelMap.addAttribute("msg", "Invalid username or password. Please try again.");
-			return "login/login";
+			return "login/login_p";
 		}
-		return "findFlights";
+		return "findFlights_p";
 	}
 }
