@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="search" method="post">
+<form action="flights/search" method="post">
 	<h2>Search flights</h2>
 	<pre>
 		From <input type="text" name="from">
@@ -17,6 +17,7 @@
 		<input type="submit" value="Search">
 	</pre>
 </form>
+
 
 
 </body>
