@@ -32,7 +32,7 @@
 		<td>${f.departureCity}</td>
 		<td>${f.arrivalCity}</td>
 		<td>${f.estimatedDepartureTime}</td>
-		<td><a href="completeReservation_p?flightId=${f.id}">Select</a></td>
+		<td><a href="completeReservation?flightId=${f.id}">Select</a></td>
 	</tr>
 	</c:forEach>
 </table>
