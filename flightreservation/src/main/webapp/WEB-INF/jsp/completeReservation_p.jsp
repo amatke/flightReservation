@@ -18,18 +18,30 @@
 <a href="searchFlights">Search flights</a>
 <br>
 	<pre>
-		AIRLINES  <input readonly type="text" value="${flight.operatingAirlines}" /> 
-		DEPARTURE CITY <input readonly type="text" value="${flight.departureCity}" />
-		ARRIVAL CITY <input readonly type="text" value="${flight.arrivalCity}" />
-		DEPARTURE TIME <input readonly type="text" value="${flight.estimatedDepartureTime}" />
+		<h3>Flight Details</h3>
+		AIRLINES:  ${flight.operatingAirlines}
+		DEPARTURE CITY: ${flight.departureCity}
+		ARRIVAL CITY: ${flight.arrivalCity}
+		DEPARTURE TIME: ${flight.estimatedDepartureTime}
 	</pre>
 
 
 
 <form action="continueReservation" method="post">
 	<pre>
-		Card number: <input type="text" />
-		Telephone number: <input type="text" />
+		<h3>Passenger Details</h3>
+		First Name: <input type="text" name="passengerFisrtName" />
+		Last Name: <input type="text" name="passengerLastName" />
+		Email: <input type="text" name="passengerEmail" />
+		Phone:  <input type="text" name="passengerPhone" />
+		
+		<h3>Card Details</h3>
+		Name on the card: <input type="text" name="nameOnTheCard" />
+		Card number: <input type="text" name="cardNumber" />
+		Expiry Date: <input type="text" name="expirationDate" />
+		3-digit Code: <input type="text" name="securityCode" />
+		
+		<input type="hidden" value="${flight.id}" name="flightId" />
 		<input type="submit" value="Continue" />
 	</pre>
 </form>
