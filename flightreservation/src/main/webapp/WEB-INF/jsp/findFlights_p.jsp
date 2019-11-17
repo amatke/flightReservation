@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<form action="flights/search" method="post">
+<h4>Hello dear ${user.firstName} ${user.lastName} </h4>
+
+<form action="searchFlights" method="post">
 	<h2>Search flights</h2>
 	<pre>
 		From <input type="text" name="from">

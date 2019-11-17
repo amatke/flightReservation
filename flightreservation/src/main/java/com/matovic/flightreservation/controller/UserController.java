@@ -17,6 +17,7 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
 		return "login/register_p";
@@ -48,9 +49,10 @@ public class UserController {
 			ModelMap modelMap) {
 		
 		
-		User user = userRepository.findByEmail(email);
+		User user = userRepository.findByEmail(email, password);
+		modelMap.addAttribute("user", user);
 		
-		if(!user.getPassword().equals(password)) {
+		if(user==null) {
 			modelMap.addAttribute("msg", "Invalid username or password. Please try again.");
 			return "login/login_p";
 		}
