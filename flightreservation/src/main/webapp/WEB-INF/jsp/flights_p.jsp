@@ -15,6 +15,9 @@
 
 <h2>List of flights</h2>
 
+<a href="searchFlights">Search flights</a>
+<br>
+
 <table border="1">
 	<tr>
 		<th>AIRLINES</th>
@@ -23,12 +26,13 @@
 		<th>DEPARTURE TIME</th>
 	</tr>
 	
-	<c:forEach items="${flights}" var="flight" >
+	<c:forEach items="${flights}" var="f" >
 	<tr>
-		<td>${flight.operatingAirlines}</td>
-		<td>${flight.departureCity}</td>
-		<td>${flight.arrivalCity}</td>
-		<td>${flight.estimatedDepartureTime}</td>
+		<td>${f.operatingAirlines}</td>
+		<td>${f.departureCity}</td>
+		<td>${f.arrivalCity}</td>
+		<td>${f.estimatedDepartureTime}</td>
+		<td><a href="completeReservation_p?flightId=${f.id}">Select</a></td>
 	</tr>
 	</c:forEach>
 </table>

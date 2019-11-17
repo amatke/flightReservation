@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,8 +21,13 @@ public class FlightController {
 	
 	@Autowired
 	private FlightRepository flightRepository;
+	
+	@GetMapping("searchFlights")
+	public String findFlights() {
+		return "findFlights_p";
+	}
 
-	@PostMapping("search")
+	@PostMapping("searchFlights")
 	public String findFlights(@RequestParam("from") String from,
 			@RequestParam("to") String to,
 			@RequestParam("date") String departureDate, 
@@ -31,9 +37,7 @@ public class FlightController {
 		if (!departureDate.isEmpty()) 
 			parsedDate=new SimpleDateFormat("yyyy-MM-dd").parse(departureDate); 
 		
-		System.err.println(from);
-		System.err.println(to);
-		System.err.println(departureDate);
+		//System.err.println(from +"-"+ to +"-"+ departureDate);
 		
 		List<Flight> flights = flightRepository.findFlights(from, to, parsedDate);
 		modelMap.addAttribute("flights", flights);
