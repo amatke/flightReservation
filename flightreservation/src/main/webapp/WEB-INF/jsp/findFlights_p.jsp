@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +18,27 @@
 <form action="searchFlights" method="post">
 	<h2>Search flights</h2>
 	<pre>
-		From <input type="text" name="from">
-		To <input type="text" name="to">
-		Departure Date <input type="text" name="date" placeholder="yyyy-MM-dd" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
+		From
+		<select name="from">
+    		<c:forEach items="${flights}" var="f">
+       			 <option value="${f.departureCity}">${f.departureCity}</option>
+    		</c:forEach>
+		</select>
+		
+		To 
+		<select name="to">
+    		<c:forEach items="${flights}" var="f">
+       			 <option >${f.arrivalCity}</option>
+    		</c:forEach>
+		</select>
+		
+		Departure Date 
+		<select name="date">
+    		<c:forEach items="${flights}" var="f">
+       			 <option value="${f.dateOfDeparture}" >${f.dateOfDeparture}</option>
+    		</c:forEach>
+		</select>
+		
 		<input type="submit" value="Search">
 	</pre>
 </form>

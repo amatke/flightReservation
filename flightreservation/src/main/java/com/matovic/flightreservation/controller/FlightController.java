@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.matovic.flightreservation.entities.Flight;
 import com.matovic.flightreservation.repos.FlightRepository;
+import com.matovic.requests.Request;
+import com.matovic.requests.Views;
 
 @Controller
 //@RequestMapping("/flights")
@@ -22,12 +24,14 @@ public class FlightController {
 	@Autowired
 	private FlightRepository flightRepository;
 	
-	@GetMapping("searchFlights")
-	public String findFlights() {
-		return "findFlights_p";
+	@GetMapping(Request.SEARCH_FLIGHTS)
+	public String findFlights(ModelMap modelMap) {
+	
+		modelMap.addAttribute("flights", flightRepository.findAll());	
+		return Views.SEARCH_FLIGHTS;
 	}
 
-	@PostMapping("searchFlights")
+	@PostMapping(Request.SEARCH_FLIGHTS)
 	public String findFlights(@RequestParam("from") String from,
 			@RequestParam("to") String to,
 			@RequestParam("date") String departureDate, 
@@ -41,8 +45,7 @@ public class FlightController {
 		
 		List<Flight> flights = flightRepository.findFlights(from, to, parsedDate);
 		modelMap.addAttribute("flights", flights);
-		
-	
-		return "flights_p";
+			
+		return Views.FLIGHTS;
 	}
 }

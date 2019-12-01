@@ -12,6 +12,8 @@ import com.matovic.flightreservation.entities.Flight;
 import com.matovic.flightreservation.entities.Reservation;
 import com.matovic.flightreservation.repos.FlightRepository;
 import com.matovic.flightreservation.services.ReservationService;
+import com.matovic.requests.Request;
+import com.matovic.requests.Views;
 
 @Controller
 public class ReservationController {
@@ -22,23 +24,23 @@ public class ReservationController {
 	@Autowired
 	ReservationService reservationService;
 
-	@RequestMapping("completeReservation")
+	@RequestMapping(Request.COMPLETING_RESERVATION)
 	public String reservation(@RequestParam("flightId") Long flightId, ModelMap modelMap) {
 		
 		Flight flight = flightRepository.getOne(flightId);
 		modelMap.addAttribute("flight", flight);
 		
-		return "completeReservation_p";
+		return Views.COMPLETING_RESERVATION;
 	}
 	
 	
 	
-	@PostMapping("continueReservation")
+	@PostMapping(Request.CONFIRMING_RESERVATION)
 	public String continuReservation(ReservationRequest request, ModelMap modelMap) {
 		
 		Reservation reservation = reservationService.bookFlight(request);
 		modelMap.addAttribute("msg", "Succesfully created Reservation! Reservation id is " + reservation.getId() );
 		
-		return "reservationConfirmation_p";
+		return Views.CONFIRMING_RESERVATION;
 	}
 }
