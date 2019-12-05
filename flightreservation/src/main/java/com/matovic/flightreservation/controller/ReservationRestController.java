@@ -1,6 +1,7 @@
 package com.matovic.flightreservation.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.matovic.flightreservation.entities.Reservation;
 import com.matovic.flightreservation.repos.ReservationRepository;
 
 @RestController
+@CrossOrigin  // neophodno za komunikaciju sa angularom (tj generalno medjusobnu komunikaciju)
 public class ReservationRestController {
 
 	@Autowired
