@@ -15,6 +15,7 @@
 
 <div class="container">
 	<h2>Register User</h2>
+	<hr>
 	<form action="registration" method="post" class="form-horizontal">
 		<div class="row form-group"> 
 			<label class="col-sm-2">First Name:</label>  

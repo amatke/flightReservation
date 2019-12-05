@@ -16,6 +16,7 @@
 
 <div class="container">
   <h2>User Login</h2>
+  <hr>
   <form class="form-horizontal" action="login" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>

@@ -24,6 +24,7 @@
 	
 	<form action="searchFlights" method="post" class="form">
 		<h2>Search flights</h2>
+		<hr>
 			
 			<div class="row">
 				<label class="col-sm-4 form-group">From</label>	

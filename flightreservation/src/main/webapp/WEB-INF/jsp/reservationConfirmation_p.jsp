@@ -14,6 +14,7 @@
 <body>
 
 <h2>Reservation confirmation</h2>
+<hr>
 
 ${msg}
 

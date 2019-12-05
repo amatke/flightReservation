@@ -26,7 +26,7 @@
 
 <div class="container">
 <h2>Completing reservation for flight:</h2>
-
+<hr>
 
 	<div> <h3>Flight Details</h3> </div>
 	<div class="row">

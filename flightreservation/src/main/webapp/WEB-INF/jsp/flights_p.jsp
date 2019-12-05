@@ -27,6 +27,7 @@
 
 <div class="container">
 	<h2>List of flights</h2>
+	<hr>
 	
 	<table border="1" class="table table-hover" >
 		<tr>
